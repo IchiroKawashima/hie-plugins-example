@@ -1,0 +1,39 @@
+name: hie-plugins-example
+version: 0.1.0.0
+github: IchiroKawashima/hie-plugins-example
+license: BSD3
+author: Ichiro Kawashima
+maintainer: kawashima.ichiro172@mail.kyutech.jp
+copyright: 2020 Ichiro Kawashima
+description: Please see the README on GitHub at <https://github.com/IchiroKawashima/hie-plugins-example#readme>
+
+extra-source-files:
+    - README.md
+
+dependencies:
+    - base >= 4.7 && < 5
+    - ghc-typelits-knownnat
+
+ghc-options:
+    - -fplugin=GHC.TypeLits.KnownNat.Solver
+
+default-extensions:
+    - KindSignatures
+    - DataKinds
+    - TypeOperators
+    - TypeApplications
+    - ScopedTypeVariables
+
+library:
+    source-dirs: src
+
+executables:
+    hie-plugins-example-exe:
+        source-dirs: app
+        main: Main.hs
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+        dependencies:
+            - hie-plugins-example
