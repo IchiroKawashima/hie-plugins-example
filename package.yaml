@@ -13,9 +13,11 @@ extra-source-files:
 dependencies:
     - base >= 4.7 && < 5
     - ghc-typelits-knownnat
+    - ghc-typelits-natnormalise
 
 ghc-options:
     - -fplugin=GHC.TypeLits.KnownNat.Solver
+    - -fplugin=GHC.TypeLits.Normalise
 
 default-extensions:
     - KindSignatures
@@ -23,6 +25,9 @@ default-extensions:
     - TypeOperators
     - TypeApplications
     - ScopedTypeVariables
+    - TypeFamilies
+    - NoStarIsType
+    - AllowAmbiguousTypes
 
 library:
     source-dirs: src
