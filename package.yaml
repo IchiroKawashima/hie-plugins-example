@@ -14,10 +14,12 @@ dependencies:
     - base >= 4.7 && < 5
     - ghc-typelits-knownnat
     - ghc-typelits-natnormalise
+    - ghc-typelits-extra
 
 ghc-options:
     - -fplugin=GHC.TypeLits.KnownNat.Solver
     - -fplugin=GHC.TypeLits.Normalise
+    - -fplugin=GHC.TypeLits.Extra.Solver
 
 default-extensions:
     - KindSignatures
