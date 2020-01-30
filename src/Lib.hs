@@ -7,8 +7,8 @@ where
 import           GHC.TypeLits
 import           Data.Proxy
 
-knownNatExample :: forall (n :: Nat) . (KnownNat n) => Proxy n -> Integer
-knownNatExample _ = natVal (Proxy @n) + natVal (Proxy @(n + 2))
+knownNatExample :: forall (n :: Nat) . (KnownNat n) => Integer
+knownNatExample = natVal (Proxy @n) + natVal (Proxy @(n + 2))
 
 natNormalizeExample :: forall (x :: Nat) (y :: Nat)
                      . (KnownNat x, KnownNat y)
