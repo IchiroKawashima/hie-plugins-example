@@ -1,10 +1,11 @@
 module Lib
-    ( someFunc
+    ( knownNatExample
     )
 where
 
 import           GHC.TypeLits
 import           Data.Proxy
 
-someFunc :: forall  (n :: Nat) . (KnownNat n) => Proxy n -> Integer
-someFunc _ = natVal (Proxy @n) + natVal (Proxy @(n + 2))
+knownNatExample :: forall (n :: Nat) . (KnownNat n) => Proxy n -> Integer
+knownNatExample _ = natVal (Proxy @n) + natVal (Proxy @(n + 2))
+

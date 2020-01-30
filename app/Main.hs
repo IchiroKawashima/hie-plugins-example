@@ -5,4 +5,5 @@ import           Data.Proxy
 import           Lib
 
 main :: IO ()
-main = print $ someFunc (Proxy @3)
+main = do
+    print $ knownNatExample (Proxy @3)
